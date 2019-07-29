@@ -21,7 +21,7 @@ let obj = {a: 'a', b: 'b', c: 'c'}
 let clone = Object.assign({}, obj);
 let clne2 = {...obj}
 
-// Objext inside object
+// Object inside object
 
 let obj3 = {
     a: 'a',
