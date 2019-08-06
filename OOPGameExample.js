@@ -1,5 +1,7 @@
-// factory functions
 
+//#region OOP with functions
+/*
+// factory functions
 const elFunctions = {
     attack() {
         return "attack with " + this.weapon
@@ -30,5 +32,24 @@ Elf.prototype.attack = function(){
 const peter = new Elf("Peter", "stones")
 console.log(peter.attack())
 const sam = new Elf("Sam", "fire")
-console.log(sam.attack())
+console.log(sam.attack()) */
+
+//#endregion
+
+
+// Implementing OOP in JS for "Game"
+
+class Elf {
+    constructor(name, weapon){
+        this.name = name;
+        this.weapon = weapon;
+    }
+
+    attack(){
+        return 'Atack with ' + this.weapon;
+    }
+}
+
+const fiona = new Elf('Fiona', 'ninja stars');
+const ogre = {...fiona}
 
