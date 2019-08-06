@@ -78,12 +78,22 @@ class King extends Character {
     }
 }
 
+class Queen extends Character {
+    constructor(name, weapon, type){
+        super(name, weapon)
+        this.type = type
+    }
+    attack(){
+        return `The Queen ${this.name} of ${this.type} attacks with her powerful ${this.weapon} `;
+    }
+}
+
 const dolby = new Elf('Dolby', 'cloth', 'house');
 dolby.attack()
 const shrek = new Ogre('Shrek', 'club', 'green');
 shrek.makeFort()
 const arthur = new King("Arthur", "sword", "Britain", "Coffe");
-arthur.attack();
 arthur.kingDemand();
+const mary  = new Queen("Mary", "army", "hearts")
 
 
