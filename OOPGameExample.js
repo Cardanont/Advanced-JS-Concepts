@@ -52,10 +52,24 @@ class Character {
 
 class Elf extends Character (){
     constructor(name, weapon, type) {
+        super(name, weapon);
         this.type = type
     }
 }
 
+class Ogre extends Character {
+    constructor(name, weapon, color){
+        super(name, weapon);
+        this.color = color;
+    }
+    makeFort() {
+        return 'strongest for in the world made';
+    }
+}
+
 const dolby = new Elf('Dolby', 'cloth', 'house');
+dolby.attack()
+const shrek = new Ogre('Shrek', 'club', 'green');
+shrek.makeFort()
 
 
