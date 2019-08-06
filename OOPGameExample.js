@@ -46,7 +46,7 @@ class Character {
     }
 
     attack(){
-        return 'Atack with ' + this.weapon;
+        return this.name + ' attack with ' + this.weapon;
     }
 }
 
@@ -67,9 +67,23 @@ class Ogre extends Character {
     }
 }
 
+class King extends Character {
+    constructor(name, weapon, land, order) {
+        super(name, weapon)
+        this.land = land
+        this.order = order 
+    }
+    kingDemand (){
+        return 'The king demands ' + this.order;
+    }
+}
+
 const dolby = new Elf('Dolby', 'cloth', 'house');
 dolby.attack()
 const shrek = new Ogre('Shrek', 'club', 'green');
 shrek.makeFort()
+const arthur = new King("Arthur", "sword", "Britain", "Coffe");
+arthur.attack();
+arthur.kingDemand();
 
 
