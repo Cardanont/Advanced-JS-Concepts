@@ -39,7 +39,7 @@ console.log(sam.attack()) */
 
 // Implementing OOP in JS for "Game"
 
-class Elf {
+class Character {
     constructor(name, weapon){
         this.name = name;
         this.weapon = weapon;
@@ -50,6 +50,12 @@ class Elf {
     }
 }
 
-const fiona = new Elf('Fiona', 'ninja stars');
-const ogre = {...fiona}
+class Elf extends Character (){
+    constructor(name, weapon, type) {
+        this.type = type
+    }
+}
+
+const dolby = new Elf('Dolby', 'cloth', 'house');
+
 
