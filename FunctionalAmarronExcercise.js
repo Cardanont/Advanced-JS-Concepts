@@ -35,7 +35,7 @@ function addItemToCart(user, item){
 function applyTaxToItems(user) {
     amarronHistory.push(user)
     const {cart} = user;
-    const taxRate = 1.3;
+    const taxRate = 1.03;
     const updatedCart = cart.map(item => {
         return {
             name: item.name,
