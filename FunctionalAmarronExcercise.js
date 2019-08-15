@@ -1,4 +1,10 @@
 // Amarron shopping
+// Implement a cart feature
+// 1. Add items to cart.
+// 2. Add 3% tax to item in cart
+// 3. Buy item: cart --> purchases
+// 4. Empty cart
+
 const user = {
     name: 'Kim',
     active: true,
@@ -6,7 +12,7 @@ const user = {
     purchases: []
 }
 
-const amazonHistory = [];
+const amarronHistory = [];
 const compose = (f,g) => (...args) => f(g(...args));
 
 purchaseItem(
@@ -21,13 +27,13 @@ function purchaseItem (...fns){
 } 
 
 function addItemToCart(user, item){
-    amazonHistory.push(user)
+    amarronHistory.push(user)
     const updateCart = user.cart.concat(item)
     return Object.assign({}, user, {cart: updateCart})
 }
 
 function applyTaxToItems(user) {
-    amazonHistory.push(user)
+    amarronHistory.push(user)
     const {cart} = user;
     const taxRate = 1.3;
     const updatedCart = cart.map(item => {
@@ -40,26 +46,19 @@ function applyTaxToItems(user) {
 }
 
 function buyItem(user) {
-    amazonHistory.push(user)
+    amarronHistory.push(user)
     return Object.assign({}, user, { purchases: user.cart })
 }
 
 function emptyCart(user) {
-    amazonHistory.push(user)
+    amarronHistory.push(user)
     return Object.assign({}, user, { cart: [] })
 }
-
-
-
-// Implement a cart feature
-// 1. Add items to cart.
-// 2. Add 3% tax to item in cart
-// 3. Buy item: cart --> purchases
-// 4. Empty cart
 
 // Bonus:
 // Accept refunds.
 function makeRefound(user){
+    amarronHistory.push(user)
     return Object.assign({}, user, { purchases: [] })
     console.log("Your money will be refound in about 25 days hehe ");
 }
