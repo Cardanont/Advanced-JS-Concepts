@@ -45,3 +45,21 @@ const closure = function(){
 const getCounter = closure();
 getCounter()
 getCounter()
+
+// currying
+
+const multiply = (a, b) => a*b;
+const curriedMultiply = (a) => (b) => a*b;
+
+curriedMultiplyBy5(5) = curriedMultiply(5);
+
+// 10 years later
+curriedMultiplyBy5(4) // --> 20
+
+
+// Partial Application
+const multiply2 = (a, b, c) => a*b*c;
+
+const partialMultiplyBy5 = multiply2.bind(null, 5);
+
+partialMultiplyBy5(4, 10)
