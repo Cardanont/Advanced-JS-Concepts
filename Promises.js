@@ -11,3 +11,10 @@ movePlayer(100, 'Left', function(){
         });
     });
 });
+
+// With promise 
+
+movePlayer(100, 'Left')
+    .then(() => movePlayer(400, 'Left'))
+    .then(() => movePlayer(10, 'Right'))
+    .then(() => movePlayer(330, 'Left'))
